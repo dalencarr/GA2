@@ -38,3 +38,8 @@ while command != 'q':
             print("That was not found in the string.")
 
     command = input(">")
+if command == 'q':
+    print("Are you sure you want to quit the software? type Yes for confirmation.")
+    choice = input(">")
+    if choice == "yes" or "Yes":
+        print("End of software.")

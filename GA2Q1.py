@@ -9,7 +9,7 @@ verified = False
 while not verified:
     # ask for password
     pw = input("Please enter a password: ")
-    # check password length, make sure it contains letters and numbers
+    # check password length, make sure it contains letters and numbers only
     if 10 < len(pw) < 16 and pw.isalnum() and not pw.isalpha() and not pw.isnumeric():
         # verify password
         pw_check = input("Re-enter password: ")

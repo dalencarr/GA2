@@ -22,30 +22,33 @@ command = input(">")
 
 # quit immediately if user enters q
 while command != 'q':
-    #let user fix mistakes
+    # let user fix mistakes
     if command == 'u':
         string1 = string2
         print(string1)
     elif command == 'p':
-    #remove punctuation 
+        # remove punctuation
         string1 = string1.translate(str.maketrans('', '', string.punctuation))
         print(string1)
     elif command == 'c':
-    # print the number of words
+        # print the number of words
         print(len(string1.split()))
     elif command == 'w':
-    # tell whether a word is in the string
+        # tell whether a word is in the string
         word = input("Enter a word: ")
         if word.lower() in string1.lower():
             print("Yes, that word is in the string.")
         else:
             print(f'No, {word} is not in your string.')
-    # let the user replace a word
+        # let the user replace a word
     elif command == 'r':
         word = input("Enter the word you'd like to replace: ")
         replacement = input("Enter replacement word: ")
+        number = int(input('Enter the number of instances of that word you would like to replace.\n'
+                           'Press enter to skip this step if you want to replace all instances of that word: ')
+                     or string1.count(word))
         if word in string1:
-            string1 = string1.replace(word, replacement)
+            string1 = string1.replace(word, replacement, number)
             print(string1)
         else:
             print("That was not found in the string.")
